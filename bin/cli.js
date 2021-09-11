@@ -5,8 +5,6 @@ const { stringify, parse } = require('../index.js');
 
 
 // -------------------- CLI ----------------------------------------------------------------------
-
-
 program
   .command('parse')
   .argument('<first>','integer argument')
