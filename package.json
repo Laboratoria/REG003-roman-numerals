@@ -19,8 +19,8 @@
     "type": "git",
     "url": "git+https://github.com/nangebav/REG003-roman-numerals.git"
   },
-  "author": "Nangebav",
-  "license": "ISC",
+  "author": "nangebav",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nangebav/REG003-roman-numerals/issues"
   },
