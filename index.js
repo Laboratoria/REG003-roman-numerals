@@ -84,7 +84,7 @@ const parse = (argument) => {
     // Cuando el string es vacio
     if(string == null) return -1;
 
-    // Función
+    // Función para la conversión de números romanos a algebraicos
     var num = lookup(string.charAt(0));
     var pre, curr;
       
