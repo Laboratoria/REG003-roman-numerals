@@ -3,7 +3,7 @@
 const { program } = require('commander');
 const { stringify, parse } = require('../index.js');
 
-
+const options = program.opts();
 // -------------------- CLI ----------------------------------------------------------------------
 program
   .command('parse')
@@ -33,27 +33,37 @@ program
   });
 
   program
-  .description('MdLinks by Nancy Bautista')
-  .option('-v, --version', 'version')
+  .version('0.0.1', '-v, --vers', 'output the current version')
+  .description('roman-numerals by Nancy Bautista')
   .option('-h, --help', 'I need help')
   .action(() => {
-    if (options.help) {
-      console.log('1.0.0');
-    } if (options.version) {
+  if (options.help) {
       console.log(`
-      Usage: roman-numerals [opttions] <command> [<input>]
-      Commands:
-        parse <input>      Parse a roman numeral string into an integer.
-        stringify <input>  Takes an integer and converts it to a roman numeral.
-      Options:
-        -h,--help     Show this help.
-        -v,--version  Show version number.
+      ╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋
+      ╋╋╋                                                                           ╋╋╋      
+      ╋╋╋  Usage: roman-numerals [options] <command> [<input>]                      ╋╋╋
+      ╋╋╋  Commands:                                                                ╋╋╋
+      ╋╋╋  parse <input>      Parse a roman numeral string into an integer.         ╋╋╋
+      ╋╋╋  stringify <input>  Takes an integer and converts it to a roman numeral.  ╋╋╋
+      ╋╋╋  Options:                                                                 ╋╋╋
+      ╋╋╋  -h,--help     Show this help.                                            ╋╋╋
+      ╋╋╋  -v,--version  Show version number.                                       ╋╋╋
+      ╋╋╋                                                                           ╋╋╋
+      ╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋╋
       `);
     }
+    if(JSON.stringify(options)=='{}'){
+    console.log(`
+    ✄┏━━━┓╋╋╋╋╋╋╋╋╋╋╋╋╋╋┏━┓╋┏┓╋╋╋╋╋╋╋╋╋╋╋╋╋┏┓
+    ✄┃┏━┓┃╋╋╋╋╋╋╋╋╋╋╋╋╋╋┃┃┗┓┃┃╋╋╋╋╋╋╋╋╋╋╋╋╋┃┃
+    ✄┃┗━┛┣━━┳┓┏┳━━┳━┓╋╋╋┃┏┓┗┛┣┓┏┳┓┏┳━━┳━┳━━┫┃┏━━┓
+    ✄┃┏┓┏┫┏┓┃┗┛┃┏┓┃┏┓┳━━┫┃┗┓┃┃┃┃┃┗┛┃┃━┫┏┫┏┓┃┃┃━━┫
+    ✄┃┃┃┗┫┗┛┃┃┃┃┏┓┃┃┃┣━━┫┃╋┃┃┃┗┛┃┃┃┃┃━┫┃┃┏┓┃┗╋━━┃
+    ✄┗┛┗━┻━━┻┻┻┻┛┗┻┛┗┛╋╋┗┛╋┗━┻━━┻┻┻┻━━┻┛┗┛┗┻━┻━━┛
+    `)
+  }
   })
-
-
-program.parse(process.argv);
+  .parse(process.argv);
 
 
 // Example program using the command configuration option isDefault to specify the default command.
