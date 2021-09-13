@@ -4,6 +4,7 @@ const { program } = require('commander');
 const { stringify, parse } = require('../index.js');
 
 const options = program.opts();
+
 // -------------------- CLI ----------------------------------------------------------------------
 program
   .command('parse')
@@ -33,7 +34,6 @@ program
   });
 
   program
-  .version('0.0.1', '-v, --vers', 'output the current version')
   .description('roman-numerals by Nancy Bautista')
   .option('-h, --help', 'I need help')
   .action(() => {
@@ -64,13 +64,3 @@ program
   }
   })
   .parse(process.argv);
-
-
-// Example program using the command configuration option isDefault to specify the default command.
-//
-// $ node defaultCommand.js build
-// build
-// $ node defaultCommand.js serve -p 8080
-// server on port 8080
-// $ node defaultCommand.js -p 443
-// server on port 443
